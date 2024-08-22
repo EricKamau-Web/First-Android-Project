@@ -27,7 +27,10 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.sellapy.R
+import com.example.sellapy.navigation.ROUT_DETAIL
+import com.example.sellapy.ui.theme.blue
 import com.example.sellapy.ui.theme.orange
+import com.example.sellapy.ui.theme.purple
 import com.example.sellapy.ui.theme.red
 
 
@@ -41,15 +44,15 @@ fun HomeScreen(navController:NavController){
     Column (
         modifier = Modifier.
         fillMaxSize()
-        .background(orange),
+        .background(purple),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ){
 
         Image(
-            painter = painterResource(id = R.drawable.products) ,  //R.examples.(the name of the app)
+            painter = painterResource(id = R.drawable.adobe) ,  //R.examples.(the name of the app)
             contentDescription ="products",
-            modifier = Modifier.size(200.dp)
+            modifier = Modifier.size(150.dp)
 
 
 
@@ -59,7 +62,7 @@ fun HomeScreen(navController:NavController){
         Text(
             text = "Sellapy",
             fontSize = 40.sp,
-            fontFamily = FontFamily.Cursive,
+            fontFamily = FontFamily.SansSerif,
             fontWeight = FontWeight.Bold,
             color = red,
 
@@ -67,7 +70,7 @@ fun HomeScreen(navController:NavController){
         Spacer(modifier = Modifier.heightIn(10.dp))
         
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { navController.navigate(ROUT_DETAIL) }, //it allows navigation to diffrent screens
             colors = ButtonDefaults.buttonColors(red),
             shape = RoundedCornerShape(10.dp)
 
