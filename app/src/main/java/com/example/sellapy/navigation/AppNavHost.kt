@@ -11,6 +11,7 @@ import com.example.sellapy.ui.theme.screens.contact.ContactScreen
 import com.example.sellapy.ui.theme.screens.dashboard.DashboardScreen
 import com.example.sellapy.ui.theme.screens.details.DetailsScreen
 import com.example.sellapy.ui.theme.screens.home.HomeScreen
+import com.example.sellapy.ui.theme.screens.splash.SplashScreen
 
 
 @Composable
@@ -41,5 +42,8 @@ fun AppNavHost(
         composable(ROUT_DASHBOARD) {
             DashboardScreen(navController = navController)
         }
+        composable(ROUT_SPLASH) {
+            SplashScreen(navController = navController)
+        }
     }
-}
+    }

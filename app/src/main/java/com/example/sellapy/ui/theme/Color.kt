@@ -16,3 +16,4 @@ val white = Color(0xFFEEEEEE)
 val purple = Color(0xFF6200EA)
 val pink = Color(0xFFEE1577)
 
+
