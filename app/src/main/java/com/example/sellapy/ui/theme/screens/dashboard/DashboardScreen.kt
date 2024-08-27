@@ -228,13 +228,13 @@ fun DashboardScreen(navController: NavController){
                             modifier = Modifier
                                 .fillMaxWidth(),contentAlignment = Alignment.Center){
                             Image(
-                                painter = painterResource(id = R.drawable.notification) ,
+                                painter = painterResource(id = R.drawable.intent) ,
                                 contentDescription = "",
                                 modifier = Modifier.size(100.dp)
                             )
                         }
                         Text(
-                            text = "Home",
+                            text = "Intent",
                             modifier = Modifier.fillMaxWidth(),
                             textAlign = TextAlign.Center,
                             fontSize = 20.sp
@@ -265,7 +265,7 @@ fun DashboardScreen(navController: NavController){
                             )
                         }
                         Text(
-                            text = "Home",
+                            text = "games",
                             modifier = Modifier.fillMaxWidth(),
                             textAlign = TextAlign.Center,
                             fontSize = 20.sp
