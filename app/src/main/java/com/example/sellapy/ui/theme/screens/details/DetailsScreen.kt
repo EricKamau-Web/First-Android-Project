@@ -1,5 +1,6 @@
 package com.example.sellapy.ui.theme.screens.details
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.horizontalScroll
@@ -39,12 +40,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.core.net.toUri
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.sellapy.R
@@ -295,12 +298,15 @@ fun DetailsScreen(navController: NavController){
             }
             //end of card
             Spacer(modifier = Modifier.width(30.dp))
+            val mContext = LocalContext.current //import the mContext function from the intent screen to elliminate the errors same case to the others(sms,email)
             Column {
                 Text(text = "Shop :Sellappy", fontSize = 20.sp)
                 Text(text = "Brand :Alison", fontSize = 18.sp)
                 Text(text = "Location :Westlands", fontSize = 18.sp)
                 Button(
-                    onClick = { /*TODO*/ },
+                    onClick = {  val callIntent = Intent(Intent.ACTION_DIAL)
+                        callIntent.data = "tel:0720245837".toUri()
+                        mContext.startActivity(callIntent) },
                     colors = ButtonDefaults.buttonColors(red),
                     shape = RoundedCornerShape(10.dp)
                 ) {

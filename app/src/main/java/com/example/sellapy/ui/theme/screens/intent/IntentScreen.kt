@@ -129,8 +129,8 @@ fun IntentScreen(navController:NavHostController){
             //to create a topBar
             topBar = {
                 TopAppBar(
-                    title = { Text(text = "Sellappy", color = androidx.compose.ui.graphics.Color.White)},
-                    colors = TopAppBarDefaults.mediumTopAppBarColors(blue),
+                    title = { Text(text = "Intent", color = androidx.compose.ui.graphics.Color.White)},
+                    colors = TopAppBarDefaults.mediumTopAppBarColors(blue), //blue works better
                     navigationIcon = {
                         IconButton(onClick = { /*TODO*/ }) {
                             Icon(imageVector = Icons.Default.Menu, contentDescription = "Menu", tint = androidx.compose.ui.graphics.Color.White)
@@ -366,7 +366,7 @@ fun IntentScreen(navController:NavHostController){
                         placeholder = { Text(text = "Browse your products....") }
                     )
                     //End of Searchbar
-                    Spacer(modifier = Modifier.width(10.dp))
+                    Spacer(modifier = Modifier.height(10.dp))
                     Button(
                         onClick = {
                             val simToolKitLaunchIntent =
