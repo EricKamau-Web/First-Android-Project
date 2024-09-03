@@ -108,7 +108,7 @@ fun SignupScreen(navController: NavController){
 
         Spacer(modifier = Modifier.heightIn(10.dp))
 
-        //textfield for name
+        //textfield for email
         OutlinedTextField(
             value = email,
             onValueChange = { email = it},
@@ -124,7 +124,7 @@ fun SignupScreen(navController: NavController){
 
 
 
-        //textfield for name
+        //textfield for password
         OutlinedTextField(
             value = password,
             onValueChange = { password = it},
@@ -161,6 +161,7 @@ fun SignupScreen(navController: NavController){
         Button(
             onClick = {
                 //copy the codes from MVVM final
+                //corrensponds with  AuthviewModel.kt
                 authViewModel.signup(name, email, password,confpassword)
 
 

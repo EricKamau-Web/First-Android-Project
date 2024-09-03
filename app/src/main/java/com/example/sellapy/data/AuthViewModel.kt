@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.sellapy.models.User
+import com.example.sellapy.navigation.ADD_PRODUCTS_URL
 import com.example.sellapy.navigation.ROUT_DASHBOARD
 import com.example.sellapy.navigation.ROUT_HOME
 import com.example.sellapy.navigation.ROUT_INTENT
@@ -91,7 +92,7 @@ class AuthViewModel(var navController: NavController, var context: Context){
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                 if (it.isSuccessful ){
                     Toast.makeText(this.context, "Success", Toast.LENGTH_SHORT).show()
-                    navController.navigate(ROUT_INTENT)
+                    navController.navigate(ADD_PRODUCTS_URL)
                 }else{
                     Toast.makeText(this.context, "Error", Toast.LENGTH_SHORT).show()
                 }
@@ -113,3 +114,11 @@ class AuthViewModel(var navController: NavController, var context: Context){
     fun isLoggedIn(): Boolean = mAuth.currentUser != null
 
 }
+//backend
+//menu tools firebase use second last in authentication
+//authentication is where all users are/build
+//get functions
+//create models package where we store variables under user.kt class
+//create a view model in data package
+//require 2 screens upload and display screens and the models
+//always start with the models
